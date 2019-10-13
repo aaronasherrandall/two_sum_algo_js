@@ -1,4 +1,3 @@
-# two_sum_algo_js
 # Two Sum Algorithm in JavaScript
 This is an exhaustive guide to the Javascript solution for the **Two Sum** problem found on Leet Code here: https://leetcode.com/problems/two-sum/
 
