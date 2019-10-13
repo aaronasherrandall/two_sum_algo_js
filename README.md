@@ -18,7 +18,7 @@ return [0, 1]
 
 The obvious answer is easy to come by, but the more efficient and less obvious answer is much more complex.
 
-#### Define Initial Algorithm
+### Define Initial Algorithm
 ```
 Given: nums: [int]
 Target: int
@@ -30,7 +30,7 @@ Return: Array of indices adding to target
 ```
 We want to return the indicies of the two numbers that add together to make that target.
 
-#### Initial Algorithm in Psuedo Code
+### Initial Algorithm in Psuedo Code
 ```
 for Each num, index in nums
     for Each num2, index2 in nums
@@ -54,7 +54,7 @@ This is common with algorithms that involve nested iterations over the data set.
 2. The ability to keep track of all of the numbers we've looked at
 3. The ability to keep track of the the numbers we need
 
-#### Define Modified Algorithm
+### Define Modified Algorithm
 
 ```
 Given: nums: [int]
@@ -65,7 +65,7 @@ Target: int
 Return: Array of indices adding to target
 ```
 
-#### Modified Algorithm in Psuedo Code
+### Modified Algorithm in Psuedo Code
 ```
 prevValues = {}
 for Each num, index in nums
@@ -79,7 +79,7 @@ for Each num, index in nums
 
 Let's look at each part of the algoritm to see what it's doing:
 
-#### PrevValues
+#### prevValues
 ```
 prevValues = {}
 for Each num, index in num
