@@ -53,3 +53,72 @@ This is common with algorithms that involve nested iterations over the data set.
 1. One for loop
 2. The ability to keep track of all of the numbers we've looked at
 3. The ability to keep track of the the numbers we need
+
+#### Define Modified Algorithm
+
+```
+Given: nums: [int]
+Target: int
+```
+
+```
+Return: Array of indices adding to target
+```
+
+#### Modified Algorithm in Psuedo Code
+```
+prevValues = {}
+for Each num, index in nums
+    neededValue = target - num
+    index2 = prevValues[neededValue]
+    if index2 != null
+        return [index2, index]
+    else
+        prevValues[num] = index
+```
+
+Let's look at each part of the algoritm to see what it's doing:
+
+```
+prevValues = {}
+for Each num, index in num
+```
+Our modified algorithm starts out similar to the initial algorithm. We begin by looping through all of the numbers in our array.
+
+Instead of creating a second for loop, we create a preValues variable to store all of the previous values that we have encountered to see if we have already encountered the value that adds up to make the target.
+
+
+```
+neededValue = target - num
+```
+We subtract the current number from the target to determine the neededValue; which is what the other value we need is to make up the target.
+
+
+```
+index2 = prevValues[neededValue]
+```
+Inside of prevValues, we check to see if we have encountered the neededValue.
+If we have, we get it and index it in index2.
+
+
+```
+if index2 != null
+        return [index2, index]
+```
+If that index (index2) exists, then we have both indices we need to solve the problem. So, we return those indecies.
+
+
+```
+else
+prevValues[num] = index
+```
+If index2 does not already exist, we store that number as the key of our hash.
+The value of this hash will be index of where that number took place.
+With this, we are able to re-store our array inside of a hash. 
+
+**This gives us the ability to look up the number instantly without having to look through our entire array every time to see if the number exists.**
+
+#### Complexity Analysis
+Time complexity : O(n). We traverse the list containing nn elements only once. Each look up in the table costs only O(1) time.
+Space complexity : O(n). The extra space required depends on the number of items stored in the hash table, which stores at most n elements.
+        
