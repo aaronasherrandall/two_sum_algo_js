@@ -122,4 +122,20 @@ With this, we are able to re-store our array inside of a hash.
 #### Complexity Analysis
 Time complexity : O(n). We traverse the list containing nn elements only once. Each look up in the table costs only O(1) time.
 Space complexity : O(n). The extra space required depends on the number of items stored in the hash table, which stores at most n elements.
-        
+
+#### Also, here is the solution in Python:
+
+```
+## nums = [2, 8 , 7, 11]
+## target = 9
+
+class Solution:
+    def twoSum(self, nums, target):
+        d = dict()
+        for index,num in enumerate(nums):
+            if d.get(num) == None:
+                d[target - num] = index
+            else:
+                return [d.get(num), index]
+```
+We can use get() method for dictionaries. It will return None if there is no specified key.
