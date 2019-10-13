@@ -79,6 +79,7 @@ for Each num, index in nums
 
 Let's look at each part of the algoritm to see what it's doing:
 
+#### PrevValues
 ```
 prevValues = {}
 for Each num, index in num
@@ -87,27 +88,27 @@ Our modified algorithm starts out similar to the initial algorithm. We begin by 
 
 Instead of creating a second for loop, we create a preValues variable to store all of the previous values that we have encountered to see if we have already encountered the value that adds up to make the target.
 
-
+#### neededValue
 ```
 neededValue = target - num
 ```
 We subtract the current number from the target to determine the neededValue; which is what the other value we need is to make up the target.
 
-
+#### Check and Index
 ```
 index2 = prevValues[neededValue]
 ```
 Inside of prevValues, we check to see if we have encountered the neededValue.
 If we have, we get it and index it in index2.
 
-
+#### Return Indicies
 ```
 if index2 != null
         return [index2, index]
 ```
 If that index (index2) exists, then we have both indices we need to solve the problem. So, we return those indecies.
 
-
+#### Store as Key of Hash
 ```
 else
 prevValues[num] = index
