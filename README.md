@@ -118,11 +118,39 @@ With this, we are able to re-store our array inside of a hash.
 
 **This gives us the ability to look up the number instantly without having to look through our entire array every time to see if the number exists.**
 
-#### Complexity Analysis
-Time complexity : O(n). We traverse the list containing nn elements only once. Each look up in the table costs only O(1) time.
-Space complexity : O(n). The extra space required depends on the number of items stored in the hash table, which stores at most n elements.
+#### Here is the solution in Javascript:
+```
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+ 
+// nums = [2, 7, 11, 15];
+// target = 9;
 
-#### Also, here is the solution in Python:
+
+var twoSum = function(nums, target) {
+    const previousValues = {}
+    for (let i = 0; i < nums.length; i++){
+        const currentValue = nums[i]
+        const neededValue = target - currentValue
+        const index2 = previousValues[neededValue]
+        if (index2 != null) {
+            return [previousValues[neededValue], i]
+        } else {
+            previousValues[currentValue] = i
+        }
+    }
+};
+```
+
+#### Complexity Analysis
+Time complexity : **O(n)**. We traverse the list containing nn elements only once. Each look up in the table costs only **O(1)** time.
+
+Space complexity : **O(n)**. The extra space required depends on the number of items stored in the hash table, which stores at most **n** elements.
+
+#### Also, here is the solution in **Python**:
 
 ```
 ## nums = [2, 8 , 7, 11]
