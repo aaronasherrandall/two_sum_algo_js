@@ -119,7 +119,7 @@ With this, we are able to re-store our array inside of a hash.
 **This gives us the ability to look up the number instantly without having to look through our entire array every time to see if the number exists.**
 
 #### Here is the solution in Javascript:
-```
+```Javascript
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -152,7 +152,7 @@ Space complexity : **O(n)**. The extra space required depends on the number of i
 
 #### Also, here is the solution in **Python**:
 
-```
+```Python
 ## nums = [2, 8 , 7, 11]
 ## target = 9
 
